@@ -1,7 +1,13 @@
 <nav class="navbar sticky-top navbar-dark bg-dark">
   <a class="navbar-brand" href="#!">Google Books</a>
   <div class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" placeholder="Find Book..." aria-label="Search" type="text">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <input #bar class="form-control mr-sm-2" placeholder="Find Book..." aria-label="Search" type="text" (keyup.enter)="searchBooks(bar.value)">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchBooks(bar.value)">Search</button>
   </div>
 </nav>
+{{books.kind}}
+<ul>
+  <li  *ngFor="let book of books | async">
+    {{ book.id }}
+  </li>
+</ul>
