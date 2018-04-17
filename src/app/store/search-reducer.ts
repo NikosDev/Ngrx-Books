@@ -15,14 +15,14 @@ export function reducer(state = [initialState], action: SearchActions.All): any 
     case SearchActions.SEARCH_RESULTS: {
       return {
         ...state,
-        searchTerms: action.payload
+        results: action.payload        
       };
     }
 
     case SearchActions.SEARCH_TERMS: {
       return {
         ...state,
-        results: action.payload
+        searchTerms: action.payload
       };
     }
 
