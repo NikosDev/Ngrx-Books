@@ -8,6 +8,7 @@ import * as SearchActions from './store/search-actions';
 import * as fromRoot from './store/reducers';
 
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/flatMap';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,7 @@ export class AppComponent {
     this.store.dispatch(new SearchActions.SearchResults(value));
 
     this.service.search(value)
-    .subscribe(results => this.store.dispatch(new SearchActions.SearchTerms(results)));
+        .subscribe(results => this.store.dispatch(new SearchActions.SearchTerms(results)));
     
     console.log(this.books);    
   }

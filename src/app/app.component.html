@@ -1,3 +1,5 @@
+<!-- Navbar -->
+
 <nav class="navbar sticky-top navbar-dark bg-dark">
   <a class="navbar-brand" href="#!">Google Books</a>
   <div class="form-inline my-2 my-lg-0">
@@ -5,9 +7,28 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchBooks(bar.value)">Search</button>
   </div>
 </nav>
-{{books.kind}}
-<ul>
+
+<!-- Book -->
+
+<!-- <ul>
   <li  *ngFor="let book of books | async">
-    {{ book.id }}
+    Title: {{ book.volumeInfo.title }}
   </li>
-</ul>
+</ul> -->
+<div class="container">
+  <div class="row">
+    <div *ngFor="let book of books | async" class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top" src={{book.selfLink.id}} alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.volumeInfo.title }}</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title
+              and make up the bulk of the card's content.
+            </p>
+            <a href="#!" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

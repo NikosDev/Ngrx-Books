@@ -6,8 +6,8 @@ export interface State {
 }
 
 const initialState: any = {
-  searchTerms: 'nikos',
-  results: 'kappa'
+  searchTerms: '',
+  results: ''
 };
 
 export function reducer(state = [initialState], action: SearchActions.All): any {
