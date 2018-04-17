@@ -1,0 +1,14 @@
+#book-image{
+    max-height: 400px;
+    height: 400px;
+}
+
+#book-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card{
+    margin-top: 60px;
+}

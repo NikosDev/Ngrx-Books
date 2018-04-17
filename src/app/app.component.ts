@@ -8,6 +8,8 @@ import * as SearchActions from './store/search-actions';
 import * as fromRoot from './store/reducers';
 
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +19,8 @@ import 'rxjs/add/operator/switchMap';
 export class AppComponent {
   terms: Observable<any>;
   books: Observable<any>;
+  image: Observable<string>;
+  zoom: any = '&zoom=3'
 
   constructor(
     private service:BooksService,
@@ -24,13 +28,15 @@ export class AppComponent {
   ){
     this.terms = store.select(fromRoot.selectTerms);
     this.books = store.select(fromRoot.selectResults);
+    this.image = store.select(fromRoot.selectImage);
   }
 
   searchBooks(value: string){
     this.store.dispatch(new SearchActions.SearchTerms(value));
 
     this.service.search(value)
-        .subscribe(results => this.store.dispatch(new SearchActions.SearchResults(results)));
+    .subscribe(results => this.store.dispatch(new SearchActions.SearchResults(results)));
+        
     
     console.log(this.books);    
   }

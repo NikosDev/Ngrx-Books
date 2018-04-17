@@ -3,11 +3,13 @@ import * as SearchActions from './search-actions';
 export interface State {
   searchTerms: string;
   results: any
+  image: any
 }
 
 const initialState: any = {
   searchTerms: '',
-  results: ''
+  results: '',
+  image: ''
 };
 
 export function reducer(state = [initialState], action: SearchActions.All): any {
@@ -23,6 +25,13 @@ export function reducer(state = [initialState], action: SearchActions.All): any 
       return {
         ...state,
         searchTerms: action.payload
+      };
+    }
+
+    case SearchActions.SEARCH_IMAGE: {
+      return {
+        ...state,
+        image: action.payload
       };
     }
 

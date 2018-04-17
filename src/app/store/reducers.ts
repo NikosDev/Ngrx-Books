@@ -17,6 +17,10 @@ export function selectTerms(state: State) {
   return state.search.searchTerms;
 }
 
+export function selectImage(state: State) {
+  return state.search.image;
+}
+
 
 export const reducers = {
     search: fromSearch.reducer
