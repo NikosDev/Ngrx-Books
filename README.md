@@ -6,7 +6,7 @@ NgrxBooks is an application created with Angular5 framework, using [Angular CLI]
 
 [http://ngrx-google-books.surge.sh](http://ngrx-google-books.surge.sh)
 
-## Development server
+# Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
