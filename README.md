@@ -20,4 +20,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 # Support
 
-Please [open an issue](https://github.com/NikosDev/Ngrx-Books/issues) for support.
+Please [open an issue](https://github.com/NikosDev/Ngrx-Books/issues) for support !!!.
