@@ -12,7 +12,7 @@ const initialState: any = {
   image: ''
 };
 
-export function reducer(state = [initialState], action: SearchActions.All): any {
+export function reducer(state = initialState, action: SearchActions.All): any {
   switch(action.type) {
     case SearchActions.SEARCH_RESULTS: {
       return {

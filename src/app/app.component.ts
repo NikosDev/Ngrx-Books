@@ -35,7 +35,7 @@ export class AppComponent {
     this.store.dispatch(new SearchActions.SearchTerms(value));
 
     this.service.search(value)
-    .subscribe(results => this.store.dispatch(new SearchActions.SearchResults(results)));
+                .subscribe(results => this.store.dispatch(new SearchActions.SearchResults(results)));
         
     
     console.log(this.books);    
